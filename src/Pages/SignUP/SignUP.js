@@ -21,7 +21,7 @@ const SignUP = () => {
 
     // submit form 
     const onSubmit = (data) => {
-        console.log(data)
+
         let { mail, name, password } = data;
         createUserWithEmailAndPassword(mail, password, name)
     };
@@ -39,7 +39,7 @@ const SignUP = () => {
 
     if (user) {
         return (
-            alert("Registered Successful")
+            alert("Please Check Your Email And Verify It!!!")
         );
     }
 

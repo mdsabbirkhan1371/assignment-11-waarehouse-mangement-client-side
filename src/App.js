@@ -10,6 +10,7 @@ import Banner from './Pages/Banner/Banner';
 import Footer from './Pages/Share/Footer/Footer';
 import Inventory_Details from './Pages/Inventory_Details/Inventory_Details';
 import PagenotFound from './Pages/PagenotFound/PagenotFound';
+import RequireAuth from './Pages/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -19,7 +20,14 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/inventory' element={<InventoryItems></InventoryItems>}></Route>
-        <Route path='/inventory/:inventoryId' element={<Inventory_Details></Inventory_Details>}></Route>
+
+        <Route path='/inventory/:inventoryId' element={
+          <RequireAuth>
+            <Inventory_Details></Inventory_Details>
+          </RequireAuth>
+        }>
+        </Route>
+
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUP></SignUP>}></Route>
         <Route path='/banner' element={<Banner></Banner>}></Route>
