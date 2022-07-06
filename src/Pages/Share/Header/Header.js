@@ -43,7 +43,7 @@ const Header = () => {
                                             Add Items
                                         </Nav.Link>
                                         <Nav.Link as={Link} to='/manageInventory'>
-                                            Manage Inventories
+                                            Manage Items
                                         </Nav.Link>
                                         <button onClick={handleSignout} className='btn btn-outline-danger text-white fs-4'>Log Out</button>
 
