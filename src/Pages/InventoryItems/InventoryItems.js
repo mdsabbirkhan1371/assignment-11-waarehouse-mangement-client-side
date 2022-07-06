@@ -10,7 +10,7 @@ const InventoryItems = () => {
     }, [])
     return (
         <div className='container'>
-            <h3 className='text-center mt-5 border-bottom border-success border-2'>Inventory_Items</h3>
+            <h3 className='text-primary text-center mt-5 border-bottom border-success border-2'>Inventory_Items</h3>
 
             <div className="inventories py-5">
                 {

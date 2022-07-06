@@ -1,10 +1,17 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
+
 const InventoryItem = ({ inventory }) => {
 
-    const { name, description, image, price, supplier_name, quantity
+    const { _id, name, description, image, price, supplier_name, quantity
     } = inventory;
+    const navigate = useNavigate();
+    const handleDetails = (id) => {
+        navigate(`/inventory/${id}`)
+        console.log(id)
+    }
     return (
         <div className='mx-auto'>
             <Card style={{ width: '18rem' }}>
@@ -19,10 +26,10 @@ const InventoryItem = ({ inventory }) => {
                     <Card.Text>
                         {description.slice(0, 100)}
                     </Card.Text>
-                    <Button variant="primary">Stock Update</Button>
+                    <button onClick={() => handleDetails(_id)} type="button" className="btn btn-primary">Stock_Update</button>
                 </Card.Body>
             </Card>
-        </div>
+        </div >
     );
 };
 
