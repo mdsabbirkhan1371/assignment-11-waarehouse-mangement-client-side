@@ -7,6 +7,7 @@ const InventoryItems = () => {
         fetch("http://localhost:5000/inventory")
             .then(res => res.json())
             .then(data => setInventoryies(data))
+
     }, [])
     return (
         <div className='container'>
@@ -14,7 +15,7 @@ const InventoryItems = () => {
 
             <div className="inventories py-5">
                 {
-                    inventoryies.slice(0, 6).map(inventory =>
+                    inventoryies.map(inventory =>
                         <InventoryItem
                             key={inventory._id}
                             inventory={inventory}

@@ -11,6 +11,8 @@ import Footer from './Pages/Share/Footer/Footer';
 import Inventory_Details from './Pages/Inventory_Details/Inventory_Details';
 import PagenotFound from './Pages/PagenotFound/PagenotFound';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import AddInventory from './Pages/AddInventory/AddInventory';
+import ManageInventory from './Pages/ManageInventory/ManageInventory';
 
 function App() {
   return (
@@ -24,6 +26,18 @@ function App() {
         <Route path='/inventory/:inventoryId' element={
           <RequireAuth>
             <Inventory_Details></Inventory_Details>
+          </RequireAuth>
+        }>
+        </Route>
+        <Route path='/addInventory' element={
+          <RequireAuth>
+            <AddInventory></AddInventory>
+          </RequireAuth>
+        }>
+        </Route>
+        <Route path='/manageInventory' element={
+          <RequireAuth>
+            <ManageInventory></ManageInventory>
           </RequireAuth>
         }>
         </Route>
