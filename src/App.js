@@ -6,6 +6,9 @@ import Home from './Pages/Home/Home';
 import InventoryItems from './Pages/InventoryItems/InventoryItems';
 import Login from './Pages/Login/Login';
 import SignUP from './Pages/SignUP/SignUP';
+import Banner from './Pages/Banner/Banner';
+import Footer from './Pages/Share/Footer/Footer';
+
 function App() {
   return (
     <div>
@@ -16,7 +19,9 @@ function App() {
         <Route path='/inventory' element={<InventoryItems></InventoryItems>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUP></SignUP>}></Route>
+        <Route path='/banner' element={<Banner></Banner>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }
