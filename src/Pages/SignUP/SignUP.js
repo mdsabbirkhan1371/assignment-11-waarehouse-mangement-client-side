@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { useForm } from "react-hook-form";
 import './SignUP.css'
+
 import SocialLogin from '../SocialLogin/SocialLogin';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -34,6 +35,7 @@ const SignUP = () => {
     if (loading) {
         return <p>Loading...</p>;
     }
+
     if (user) {
         return (
             <div>

@@ -1,4 +1,4 @@
-import { Button } from 'bootstrap';
+
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import Container from 'react-bootstrap/Container';
@@ -15,6 +15,7 @@ const Header = () => {
 
     // signout handle 
     const handleSignout = () => {
+
         signOut(auth)
     };
     return (
@@ -35,7 +36,7 @@ const Header = () => {
                         <Nav>
                             {
                                 user ?
-                                    <button onClick={handleSignout} className='btn btn-outline-danger text-white fs-4'>SignOut</button>
+                                    <button onClick={handleSignout} className='btn btn-outline-danger text-white fs-4'>Log Out</button>
                                     :
                                     <>
                                         <Nav.Link as={Link} to='/signup'>
