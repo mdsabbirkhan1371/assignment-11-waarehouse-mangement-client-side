@@ -9,6 +9,7 @@ import SignUP from './Pages/SignUP/SignUP';
 import Banner from './Pages/Banner/Banner';
 import Footer from './Pages/Share/Footer/Footer';
 import Inventory_Details from './Pages/Inventory_Details/Inventory_Details';
+import PagenotFound from './Pages/PagenotFound/PagenotFound';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUP></SignUP>}></Route>
         <Route path='/banner' element={<Banner></Banner>}></Route>
+        <Route path='/*' element={<PagenotFound></PagenotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

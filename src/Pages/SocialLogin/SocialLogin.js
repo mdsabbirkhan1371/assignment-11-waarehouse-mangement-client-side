@@ -15,7 +15,7 @@ const SocialLogin = () => {
                 <button
                     className='btn btn-success w-50 d-block mx-auto my-3'>
                     <img style={{ width: '35px' }} src={gmailicon} alt="" />
-                    <span className='p-2'>Continue With gmail</span>
+                    <span className='p-2'>Continue With Google</span>
                 </button>
                 <button
                     className='btn btn-success w-50 d-block mx-auto my-3'>

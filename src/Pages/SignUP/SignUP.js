@@ -3,12 +3,44 @@ import { Link } from 'react-router-dom'
 import { useForm } from "react-hook-form";
 import './SignUP.css'
 import SocialLogin from '../SocialLogin/SocialLogin';
-
+import auth from '../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const SignUP = () => {
+    // create user with email and password
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = (data) => console.log(data);
+
+    // submit form 
+    const onSubmit = (data) => {
+        console.log(data)
+        let { mail, name, password } = data;
+        createUserWithEmailAndPassword(mail, password, name)
+    };
+    // some condition 
+    if (error) {
+        return (
+            <div>
+                <p>Error: {error.message}</p>
+            </div>
+        );
+    }
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+    if (user) {
+        return (
+            <div>
+                <p>Registered User Successful!!</p>
+            </div>
+        );
+    }
 
     return (
         <div>
@@ -22,7 +54,7 @@ const SignUP = () => {
                 <p>{errors.password?.message}</p>
                 <p className='text-white account'>Already have an account?<Link to='/login'>Login Here</Link></p>
 
-                <input className='bg-success px-5 py-2 rounded text-white' type="submit" value='SignUp' />
+                <input className='bg-success px-5 py-2 rounded text-white' type="submit" value='Register' />
             </form>
             <SocialLogin></SocialLogin>
         </div>

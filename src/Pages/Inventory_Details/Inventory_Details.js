@@ -13,7 +13,7 @@ const Inventory_Details = () => {
 
     return (
         <div className=' my-5'>
-            <Card className='mx-auto' style={{ width: '18rem' }}>
+            <Card className='mx-auto text-center' style={{ width: '18rem' }}>
                 <Card.Img style={{ padding: "10px" }} variant="top" src={image} />
                 <Card.Body>
                     <Card.Title>Name: {name}</Card.Title>
