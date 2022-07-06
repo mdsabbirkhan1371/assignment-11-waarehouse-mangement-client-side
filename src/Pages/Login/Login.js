@@ -5,8 +5,13 @@ import './Login.css'
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-
+import { useNavigate, useLocation } from 'react-router-dom'
+import Loading from '../Loading/Loading';
 const Login = () => {
+
+    const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
     // login with mail and password 
 
     const [
@@ -34,13 +39,11 @@ const Login = () => {
         );
     }
     if (loading) {
-        return <p>Loading...</p>;
+        return <Loading></Loading>;
     }
     if (user) {
         return (
-            <div>
-                <p>Signed In Successful</p>
-            </div>
+            navigate(from, { replace: true })
         );
     }
     return (

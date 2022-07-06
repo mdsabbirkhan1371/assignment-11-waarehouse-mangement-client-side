@@ -6,6 +6,7 @@ import './SignUP.css'
 import SocialLogin from '../SocialLogin/SocialLogin';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import Loading from '../Loading/Loading';
 
 const SignUP = () => {
     // create user with email and password
@@ -33,14 +34,12 @@ const SignUP = () => {
         );
     }
     if (loading) {
-        return <p>Loading...</p>;
+        return <Loading></Loading>
     }
 
     if (user) {
         return (
-            <div>
-                <p>Registered User Successful!!</p>
-            </div>
+            alert("Registered Successful")
         );
     }
 

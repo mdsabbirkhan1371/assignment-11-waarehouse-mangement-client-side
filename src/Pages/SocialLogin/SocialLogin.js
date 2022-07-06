@@ -4,13 +4,16 @@ import facbookicon from '../../image/icon/facebook.png'
 import githubicon from '../../image/icon/889192.png'
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-
+import { useLocation, useNavigate } from "react-router-dom"; import Loading from '../Loading/Loading';
 const SocialLogin = () => {
     // sign in with google 
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     //   sign in with github 
     const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
 
+    const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
     if (error || error1) {
         return (
             <div>
@@ -20,13 +23,12 @@ const SocialLogin = () => {
         );
     }
     if (loading || loading1) {
-        return <p>Loading...</p>;
+        return <Loading></Loading>;
     }
     if (user || user1) {
         return (
-            <div>
-                <p>Signed In User</p>
-            </div>
+            navigate(from, { replace: true })
+
         );
     }
     return (
