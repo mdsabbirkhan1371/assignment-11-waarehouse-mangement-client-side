@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+
 const AddInventory = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -20,6 +21,7 @@ const AddInventory = () => {
                 console.log(result)
             })
     }
+
 
     return (
         <form className=' my-5 rounded w-75 mx-auto p-5' onSubmit={handleSubmit(onSubmit)}>

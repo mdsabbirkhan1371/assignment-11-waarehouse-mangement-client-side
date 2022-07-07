@@ -1,4 +1,5 @@
 import React from 'react';
+
 import useInventories from '../hooks/useInventories';
 import SingleManage from './SingleManage';
 
@@ -15,13 +16,16 @@ const ManageInventory = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    const remaing = inventories.filter(inventory => inventory._id !== id)
-                    setInventoryies(remaing)
+                    const remaining = inventories.filter(inventory => inventory._id !== id)
+                    setInventoryies(remaining)
                     return inventories;
                 })
 
+
         }
+
     }
+
 
     return (
         <div>

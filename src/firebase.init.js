@@ -1,19 +1,22 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-// require('dotenv').config()
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDtSiTjW5uidNwk5diwm7damM13Yc9svUU",
-    authDomain: "bicycle-warehouse-f81f4.firebaseapp.com",
-    projectId: "bicycle-warehouse-f81f4",
-    storageBucket: "bicycle-warehouse-f81f4.appspot.com",
-    messagingSenderId: "440699682385",
-    appId: "1:440699682385:web:f91bbbc2e7d6aff5d88270"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_REACT_APP_PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_API_ID
 };
+
+console.log({ firebaseConfig })
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

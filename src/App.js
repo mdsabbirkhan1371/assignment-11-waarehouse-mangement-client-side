@@ -13,6 +13,7 @@ import PagenotFound from './Pages/PagenotFound/PagenotFound';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import AddInventory from './Pages/AddInventory/AddInventory';
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         </Route>
 
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/signup' element={<SignUP></SignUP>}></Route>
         <Route path='/banner' element={<Banner></Banner>}></Route>
         <Route path='/*' element={<PagenotFound></PagenotFound>}></Route>
