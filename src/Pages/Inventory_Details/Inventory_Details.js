@@ -9,7 +9,7 @@ const Inventory_Details = () => {
         fetch(`http://localhost:5000/inventory/${inventoryId}`)
             .then(res => res.json())
             .then(data => setInventory(data))
-    }, [])
+    }, [inventoryId]);
 
     return (
         <div className=' my-5'>
@@ -25,7 +25,7 @@ const Inventory_Details = () => {
                     <Card.Text>
                         {description?.slice(0, 100)}
                     </Card.Text>
-                    <button type="button" className="btn btn-primary">Delivered</button>
+                    <button onClick={() => setInventory({ ...inventory, quantity: quantity - 1 })} type="button" className="btn btn-primary">Delivered</button>
                 </Card.Body>
             </Card>
         </div >
